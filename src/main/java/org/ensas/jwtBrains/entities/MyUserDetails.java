@@ -68,5 +68,10 @@ public class MyUserDetails implements UserDetails {
 		// TODO Auto-generated method stub
 		return true;
 	}
+	@Override
+	public String toString() {
+		return "MyUserDetails [username=" + username + ", password=" + password + ", authorities=" + authorities + "]";
+	}
 
+	
 }
