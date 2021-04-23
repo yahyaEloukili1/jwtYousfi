@@ -35,8 +35,8 @@ public class JwtYousfiApplication implements CommandLineRunner {
 		Stream.of("T1","T2","T3").forEach(t->{
 			taskRepository.save(new Task(null,t));
 		});
-		accountService.saveUser(new AppUser(null,"admin","1234",null));
-		accountService.saveUser(new AppUser(null,"user","1234",null));
+		accountService.saveUser(new AppUser(null,"admin","1234",null,null));
+		accountService.saveUser(new AppUser(null,"user","1234",null,null));
 		accountService.saveRole(new AppRole(null,"ADMIN"));
 		accountService.saveRole(new AppRole(null,"USER"));
 		accountService.addRoleToUser("admin", "ADMIN");

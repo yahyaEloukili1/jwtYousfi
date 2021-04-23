@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.ManyToAny;
 
@@ -34,6 +35,8 @@ public class AppUser {
 	@Column(unique = true)
 	private String username;
 	private String password;
+	@Transient
+	private String repaswword;
 	@ManyToMany(fetch= FetchType.EAGER)
 	private Collection<AppRole> roles = new ArrayList<AppRole>();
 	public Long getId() {
@@ -61,6 +64,12 @@ public class AppUser {
 	}
 	public void setRoles(Collection<AppRole> roles) {
 		this.roles = roles;
+	}
+	public String getRepaswword() {
+		return repaswword;
+	}
+	public void setRepaswword(String repaswword) {
+		this.repaswword = repaswword;
 	}
 	
 	
